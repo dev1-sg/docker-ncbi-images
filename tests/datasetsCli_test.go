@@ -9,7 +9,7 @@ import (
 	"github.com/testcontainers/testcontainers-go"
 )
 
-var datasetsCli = struct {
+var DatasetsCli = struct {
 	AWS_DEFAULT_REGION string
 	AWS_ECR_PUBLIC_URI string
 	DOCKER_IMAGE_GROUP string
@@ -23,12 +23,12 @@ var datasetsCli = struct {
 	DOCKER_IMAGE_TAG:   "latest",
 }
 
-func TestContainersGoPulldatasetsCli(t *testing.T) {
+func TestContainersGoPullDatasetsCli(t *testing.T) {
 	ctx := context.Background()
 	for attempt := 0; attempt < 3; attempt++ {
 		container, e := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
 			ContainerRequest: testcontainers.ContainerRequest{
-				Image: datasetsCli.AWS_ECR_PUBLIC_URI + "/" + datasetsCli.DOCKER_IMAGE_GROUP + "/" + datasetsCli.DOCKER_IMAGE + ":" + datasetsCli.DOCKER_IMAGE_TAG,
+				Image: DatasetsCli.AWS_ECR_PUBLIC_URI + "/" + DatasetsCli.DOCKER_IMAGE_GROUP + "/" + DatasetsCli.DOCKER_IMAGE + ":" + DatasetsCli.DOCKER_IMAGE_TAG,
 			},
 		})
 		require.NoError(t, e)
@@ -36,11 +36,11 @@ func TestContainersGoPulldatasetsCli(t *testing.T) {
 	}
 }
 
-func TestContainersGoExecdatasetsCliDatasets(t *testing.T) {
+func TestContainersGoExecDatasetsCliDatasets(t *testing.T) {
 	ctx := context.Background()
 	container, e := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
 		ContainerRequest: testcontainers.ContainerRequest{
-			Image: datasetsCli.AWS_ECR_PUBLIC_URI + "/" + datasetsCli.DOCKER_IMAGE_GROUP + "/" + datasetsCli.DOCKER_IMAGE + ":" + datasetsCli.DOCKER_IMAGE_TAG,
+			Image: DatasetsCli.AWS_ECR_PUBLIC_URI + "/" + DatasetsCli.DOCKER_IMAGE_GROUP + "/" + DatasetsCli.DOCKER_IMAGE + ":" + DatasetsCli.DOCKER_IMAGE_TAG,
 			Cmd:   []string{"sleep", "10"},
 		},
 		Started: true,
@@ -58,11 +58,11 @@ func TestContainersGoExecdatasetsCliDatasets(t *testing.T) {
 	require.Contains(t, string(output), "datasets", "Expected output not found")
 }
 
-func TestContainersGoExecdatasetsCliDataformat(t *testing.T) {
+func TestContainersGoExecDatasetsCliDataformat(t *testing.T) {
 	ctx := context.Background()
 	container, e := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
 		ContainerRequest: testcontainers.ContainerRequest{
-			Image: datasetsCli.AWS_ECR_PUBLIC_URI + "/" + datasetsCli.DOCKER_IMAGE_GROUP + "/" + datasetsCli.DOCKER_IMAGE + ":" + datasetsCli.DOCKER_IMAGE_TAG,
+			Image: DatasetsCli.AWS_ECR_PUBLIC_URI + "/" + DatasetsCli.DOCKER_IMAGE_GROUP + "/" + DatasetsCli.DOCKER_IMAGE + ":" + DatasetsCli.DOCKER_IMAGE_TAG,
 			Cmd:   []string{"sleep", "10"},
 		},
 		Started: true,
