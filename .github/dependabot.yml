@@ -12,6 +12,7 @@ updates:
   - package-ecosystem: docker
     directories:
       - /src/datasets
+      - /src/python
     schedule:
       interval: daily
     commit-message:
