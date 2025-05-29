@@ -1,12 +1,12 @@
 ---
-name: Push datasets-cli
+name: Push datasets
 
 on:
   push:
     branches:
       - main
     paths:
-      - src/datasets-cli/*
+      - src/datasets/*
   workflow_dispatch:
 
 permissions:
@@ -17,7 +17,7 @@ env:
   AWS_DEFAULT_REGION: us-east-1
   AWS_OIDC_ROLE_ARN: ${{ secrets.AWS_OIDC_ROLE_ARN }}
   DOCKER_IMAGE_GROUP: ncbi
-  DOCKER_IMAGE: datasets-cli
+  DOCKER_IMAGE: datasets
 
 jobs:
   build-push:
