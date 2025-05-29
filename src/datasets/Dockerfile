@@ -19,7 +19,7 @@ WORKDIR /root
 
 FROM base AS build
 
-RUN curl -fsSL "https://WORKDIR /rootftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v2/linux-$(case $(uname -m) in x86_64) echo amd64 ;; aarch64) echo arm64 ;; esac)/datasets" -o /tmp/datasets \
+RUN curl -fsSL "https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v2/linux-$(case $(uname -m) in x86_64) echo amd64 ;; aarch64) echo arm64 ;; esac)/datasets" -o /tmp/datasets \
     && curl -fsSL "https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v2/linux-$(case $(uname -m) in x86_64) echo amd64 ;; aarch64) echo arm64 ;; esac)/dataformat" -o /tmp/dataformat \
     && mv /tmp/datasets /usr/local/bin \
     && mv /tmp/dataformat /usr/local/bin \
