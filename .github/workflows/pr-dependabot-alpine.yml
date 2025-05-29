@@ -1,10 +1,10 @@
 ---
-name: PR Dependabot datasets-cli
+name: PR Dependabot datasets
 
 on:
   pull_request:
     paths:
-      - src/datasets-cli/*
+      - src/datasets/*
   workflow_dispatch:
 
 permissions:
@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 env:
-  DOCKER_IMAGE: datasets-cli
+  DOCKER_IMAGE: datasets
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
 jobs:

@@ -19,7 +19,7 @@ var Datasets = struct {
 	AWS_DEFAULT_REGION: "us-east-1",
 	AWS_ECR_PUBLIC_URI: "public.ecr.aws/dev1-sg",
 	DOCKER_IMAGE_GROUP: "ncbi",
-	DOCKER_IMAGE:       "datasets-cli",
+	DOCKER_IMAGE:       "datasets",
 	DOCKER_IMAGE_TAG:   "latest",
 }
 

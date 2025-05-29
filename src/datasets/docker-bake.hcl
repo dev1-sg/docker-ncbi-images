@@ -7,7 +7,7 @@ variable "DOCKER_IMAGE_GROUP" {
 }
 
 variable "DOCKER_IMAGE" {
-  default = "datasets-cli"
+  default = "datasets"
 }
 
 variable "DOCKER_IMAGE_TAG" {
