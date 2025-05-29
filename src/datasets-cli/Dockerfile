@@ -11,7 +11,7 @@ RUN curl -fsSL "https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v2/linux-
     && curl -fsSL "https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v2/linux-$(case $(uname -m) in x86_64) echo amd64 ;; aarch64) echo arm64 ;; esac)/dataformat" -o /tmp/dataformat \
     && mv /tmp/datasets /usr/local/bin \
     && mv /tmp/dataformat /usr/local/bin \
-    && chmod +x /usr/local/bin/datasetes /usr/local/bin/dataformat
+    && chmod +x /usr/local/bin/datasets /usr/local/bin/dataformat
 
 FROM base AS final
 
